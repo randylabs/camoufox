@@ -54,8 +54,8 @@ Even though both are "Firefox 142.0.1", they're slightly different, causing **88
 
 1. **Cloned Playwright's exact Firefox commit:**
    ```bash
-   git clone --filter=blob:none --no-checkout git@github.com:mozilla-firefox/firefox.git camoufox-142.0.1-bluetaka.25
-   cd camoufox-142.0.1-bluetaka.25
+   git clone --filter=blob:none --no-checkout git@github.com:mozilla-firefox/firefox.git camoufox-142.0.1-fork.27
+   cd camoufox-142.0.1-fork.27
    git checkout 361373160356d92cb5cd4d67783a3806c776ee78
    ```
 
@@ -66,7 +66,7 @@ Even though both are "Firefox 142.0.1", they're slightly different, causing **88
 
 3. **Copied Camoufox additions** (spices & herbs):
    ```bash
-   bash ../scripts/copy-additions.sh 142.0.1 bluetaka.25
+   bash ../scripts/copy-additions.sh 142.0.1 fork.27
    ```
 
 4. **Committed additions and updated tag:**
@@ -120,7 +120,7 @@ For future upgrades, find Playwright's Firefox commit:
 ## Backup Plan
 
 If this approach causes issues, we still have:
-- **Backup directory**: `camoufox-142.0.1-bluetaka.25.bak` (Mozilla tarball source)
+- **Backup directory**: `camoufox-142.0.1-fork.27.bak` (Mozilla tarball source)
 - **Downloaded tarball**: `firefox-142.0.1-playwright.tar.gz` (Playwright's commit as tarball)
 - Can go back to manual patch fixing if needed
 
@@ -133,13 +133,13 @@ If this approach causes issues, we still have:
    - `.git/` tracks: patch files, build scripts, configuration
    - **Commit patch changes here** after fixing them
 
-2. **Firefox Source Repo** (inner repo at `camoufox-142.0.1-bluetaka.25/`)
+2. **Firefox Source Repo** (inner repo at `camoufox-142.0.1-fork.27/`)
    - Contains: Firefox source code
    - `.git/` tracks: Firefox code + Camoufox additions
    - Used for: generating patches via `git diff`, reverting with `make revert`
 
 **Key workflow:**
-- Fix broken Firefox files → `cd camoufox-142.0.1-bluetaka.25 && git diff > ../patches/foo.patch`
+- Fix broken Firefox files → `cd camoufox-142.0.1-fork.27 && git diff > ../patches/foo.patch`
 - Commit the patch file → `cd .. && git add patches/foo.patch && git commit`
 
 ## Patch Application Workflow

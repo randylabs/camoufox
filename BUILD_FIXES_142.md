@@ -19,7 +19,7 @@ We've checkpointed the Firefox source at the state where **all patches applied s
 
 Once the build completes successfully:
 
-1. **Review all changes**: `cd camoufox-142.0.1-bluetaka.25 && git diff checkpoint`
+1. **Review all changes**: `cd camoufox-142.0.1-fork.27 && git diff checkpoint`
    - This shows all the build fixes we made
    - Consider committing the changes and tagging with something like "known-buildable"
 
@@ -41,7 +41,7 @@ Once the build completes successfully:
       - Plus the new build fix
       - Nothing else has leaked in
 
-   e. **Regenerate the patch**: `cd camoufox-142.0.1-bluetaka.25 && git diff > ../patches/<broken-patch>.patch`
+   e. **Regenerate the patch**: `cd camoufox-142.0.1-fork.27 && git diff > ../patches/<broken-patch>.patch`
       - Since we only applied this one patch, `git diff` will only contain this patch's changes + build fix
 
    f. **Test it**: `make revert && make patch patches/<broken-patch>.patch`
@@ -110,7 +110,7 @@ webgl::ShaderPrecisionFormat{
 **Status**: ✅ Fixed - Added `#include "gfxPlatform.h"` after HeadlessWindowCapturer.h include
 
 **Note**: This is in the `additions` directory (not a patch). Fixed in both locations:
-- ✅ `camoufox-142.0.1-bluetaka.25/juggler/screencast/nsScreencastService.cpp` (Firefox source)
+- ✅ `camoufox-142.0.1-fork.27/juggler/screencast/nsScreencastService.cpp` (Firefox source)
 - ✅ `additions/juggler/screencast/nsScreencastService.cpp` (Camoufox repo)
 
 For additions files, fix them directly and commit the change to the Camoufox repo. No patch regeneration needed.

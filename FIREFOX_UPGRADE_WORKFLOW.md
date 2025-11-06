@@ -158,10 +158,10 @@ cd /path/to/camoufox
 # Clone Firefox repo with partial clone (faster, smaller)
 git clone --filter=blob:none --no-checkout \
     git@github.com:mozilla-firefox/firefox.git \
-    camoufox-142.0.1-bluetaka.25
+    camoufox-142.0.1-fork.27
 
 # Checkout the exact commit Playwright targets
-cd camoufox-142.0.1-bluetaka.25
+cd camoufox-142.0.1-fork.27
 git checkout 361373160356d92cb5cd4d67783a3806c776ee78
 ```
 
@@ -171,7 +171,7 @@ git checkout 361373160356d92cb5cd4d67783a3806c776ee78
 
 ```bash
 # From within the Firefox source directory
-bash ../scripts/copy-additions.sh 142.0.1 bluetaka.25
+bash ../scripts/copy-additions.sh 142.0.1 fork.27
 ```
 
 This copies:
@@ -330,7 +330,7 @@ Understanding the dual-repo structure:
 │   └── browser/branding/camoufox/            # Branding files
 ├── scripts/
 │   └── copy-additions.sh                     # Copies additions/ → Firefox
-└── camoufox-142.0.1-bluetaka.25/             # Firefox Source Repo
+└── camoufox-142.0.1-fork.27/             # Firefox Source Repo
     ├── .git/                                  # Full Firefox git history!
     │   └── refs/tags/unpatched → commit      # Points to additions commit
     │                              └─ parent → # Pristine Firefox (Playwright's commit)

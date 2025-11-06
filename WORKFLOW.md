@@ -109,7 +109,7 @@ Then and only then are you ready for this:
 Example:
 
 ```bash
-cd /home/azureuser/camoufox/camoufox-142.0.1-bluetaka.25 && git diff  > ../patches/font-hijacker.patch
+cd /home/azureuser/camoufox/camoufox-142.0.1-fork.27 && git diff  > ../patches/font-hijacker.patch
 ```
 
 [BAD EMOJI] You are *not* doing a selective diff (eg `git diff -- layout/style/moz.build > ../patches/font-hijacker.patch`)!  *NO*..  you are creating a patch file to encompass all changes to the *entire* repo!  So do a `git status` to make sure everything the original patch file changed (sans any intentional removals or additions) is included.

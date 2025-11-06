@@ -411,7 +411,7 @@ When upgrading Firefox, RFP-related patches may fail if:
 grep -n "ShouldResistFingerprinting\|ResistFingerprinting" path/to/file.cpp
 
 # Check Firefox's git history for RFP changes
-cd camoufox-142.0.1-bluetaka.25
+cd camoufox-142.0.1-fork.27
 git log --all --grep="RFP\|ResistFingerprinting" --oneline -- path/to/file.cpp
 
 # See what changed between versions

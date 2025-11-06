@@ -123,7 +123,7 @@ When a patch fails, you MUST:
 ### Regenerating a Patch:
 ```bash
 # 1. Fix code in Firefox source (inner repo)
-cd camoufox-142.0.1-bluetaka.25
+cd camoufox-142.0.1-fork.27
 vim browser/components/preferences/main.js  # Fix the code
 
 # 2. Verify ALL hunks from original patch are recreated
