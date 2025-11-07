@@ -47,6 +47,29 @@ python3 -m camoufox fetch
 
 To uninstall, run `camoufox remove`.
 
+---
+
+## Troubleshooting
+
+### GitHub API Rate Limits
+
+If you see errors when running `camoufox fetch` or `python3 -m camoufox fetch`, you may be hitting GitHub's [API rate limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api) (60 requests/hour without authentication).
+
+**Solution:** Authenticate with a GitHub token to increase your rate limit to 5,000 requests/hour:
+
+```bash
+# Using GitHub CLI (recommended)
+export GITHUB_TOKEN=$(gh auth token)
+python3 -m camoufox fetch
+
+# Or set permanently in your shell profile (~/.bashrc or ~/.zshrc)
+export GITHUB_TOKEN=$(gh auth token)
+```
+
+For more details, see GitHub's documentation on [authenticating to the REST API](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api).
+
+---
+
 <details>
 <summary>CLI options</summary>
 
