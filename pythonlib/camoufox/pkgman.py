@@ -144,7 +144,7 @@ class GitHubDownloader:
 
     def __init__(self, github_repo: str) -> None:
         self.github_repo = github_repo
-        self.api_url = f"https://api.github.com/repos/{github_repo}/releases"
+        self.api_url = "https://api.github.com/repos/coryking/camoufox/releases"
 
     def check_asset(self, asset: Dict) -> Any:
         """
